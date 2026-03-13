@@ -196,3 +196,307 @@ x==========x]
 [2026-03-13 04:14:31,468: INFO: main: >>>>> stage Training completed <<<<<
 
 x==========x]
+[2026-03-14 01:37:34,756: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 01:37:34,808: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 01:37:34,816: INFO: common: created directory at: artifacts]
+[2026-03-14 01:37:36,854: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 01:37:36,888: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 01:40:15,272: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 01:40:15,278: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 01:40:15,281: INFO: common: created directory at: artifacts]
+[2026-03-14 01:40:15,756: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 01:41:59,107: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 01:41:59,112: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 01:41:59,114: INFO: common: created directory at: artifacts]
+[2026-03-14 01:41:59,861: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 01:41:59,880: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 01:45:13,621: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 01:45:13,640: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 01:45:13,649: INFO: common: created directory at: artifacts]
+[2026-03-14 01:45:14,349: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 01:45:52,935: INFO: common: json file saved at: scores.json]
+[2026-03-14 01:47:28,410: WARNING: connectionpool: Retrying (Retry(total=6, connect=7, read=6, redirect=7, status=7)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host')': /kamranshahid56-tech/kidney_disease_classification_end-to-end-DL.mlflow/api/2.0/mlflow-artifacts/artifacts/33f91dbf54c9425886f0469b3154f0f2/models/m-21cd96b5d9034e31b0cfd2e5e145a50d/artifacts/data/model.keras]
+[2026-03-14 02:27:36,398: INFO: main: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 02:27:36,407: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:27:36,419: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:27:36,423: INFO: common: created directory at: artifacts]
+[2026-03-14 02:27:36,426: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 02:27:36,429: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 02:28:12,834: INFO: data_ingestion: file downloaded from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 02:28:14,536: INFO: data_ingestion: Extracted zip file into: artifacts/data_ingestion]
+[2026-03-14 02:28:14,536: INFO: main: >>>>> stage Data Ingestion Stage completed <<<<<
+
+x==========x]
+[2026-03-14 02:28:14,537: INFO: main: >>>>> stage Prepare Base Model Stage started <<<<<]
+[2026-03-14 02:28:14,540: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:28:14,542: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:28:14,543: INFO: common: created directory at: artifacts]
+[2026-03-14 02:28:14,544: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-14 02:28:15,672: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 02:28:16,310: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 02:28:16,423: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 02:28:17,105: INFO: main: >>>>> stage Prepare Base Model Stage completed <<<<<
+
+x==========x]
+[2026-03-14 02:28:17,106: INFO: main: >>>>> stage Training started <<<<<]
+[2026-03-14 02:28:17,110: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:28:17,112: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:28:17,113: INFO: common: created directory at: artifacts]
+[2026-03-14 02:28:17,116: INFO: common: created directory at: artifacts\training]
+[2026-03-14 02:28:17,533: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 02:31:51,129: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 02:31:51,429: INFO: main: >>>>> stage Training completed <<<<<
+
+x==========x]
+[2026-03-14 02:31:51,430: INFO: main: >>>>> stage Model Evaluation Stage started <<<<<]
+[2026-03-14 02:31:51,455: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:31:51,469: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:31:51,475: INFO: common: created directory at: artifacts]
+[2026-03-14 02:31:51,852: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 02:32:14,675: INFO: common: json file saved at: scores.json]
+[2026-03-14 02:32:14,677: INFO: common: json file saved at: scores.json]
+[2026-03-14 02:32:53,422: ERROR: main: API request to endpoint /api/2.0/mlflow/registered-models/create failed with error code 403 != 200. Response body: '']
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\main.py", line 48, in <module>
+    model_evaluation.main()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_04_model_evaluation.py", line 18, in main
+    evaluation.log_into_mlflow()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\model_evaluation_mlflow.py", line 64, in log_into_mlflow
+    mlflow.keras.log_model(self.model, "model", registered_model_name="VGG16Model")
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\keras\save.py", line 349, in log_model
+    return Model.log(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\models\model.py", line 1357, in log
+    registered_model = mlflow.tracking._model_registry.fluent._register_model(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\_model_registry\fluent.py", line 179, in _register_model
+    raise e
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\_model_registry\fluent.py", line 168, in _register_model
+    create_model_response = client.create_registered_model(name)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\client.py", line 3995, in create_registered_model
+    return self._get_registry_client().create_registered_model(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\telemetry\track.py", line 30, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\_model_registry\client.py", line 96, in create_registered_model
+    return self.store.create_registered_model(name, tags, description, deployment_job_id)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\store\model_registry\rest_store.py", line 120, in create_registered_model
+    response_proto = self._call_endpoint(CreateRegisteredModel, req_body)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\store\model_registry\rest_store.py", line 68, in _call_endpoint
+    return super()._call_endpoint(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\store\model_registry\base_rest_store.py", line 42, in _call_endpoint
+    return call_endpoint(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\utils\rest_utils.py", line 627, in call_endpoint
+    response = verify_rest_response(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\utils\rest_utils.py", line 348, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/registered-models/create failed with error code 403 != 200. Response body: ''
+[2026-03-14 02:45:03,339: INFO: main: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 02:45:03,353: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:45:03,367: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:45:03,373: INFO: common: created directory at: artifacts]
+[2026-03-14 02:45:03,387: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 02:45:03,395: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 02:45:21,861: INFO: data_ingestion: file downloaded from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 02:45:28,548: INFO: data_ingestion: Extracted zip file into: artifacts/data_ingestion]
+[2026-03-14 02:45:28,548: INFO: main: >>>>> stage Data Ingestion Stage completed <<<<<
+
+x==========x]
+[2026-03-14 02:45:28,549: INFO: main: >>>>> stage Prepare Base Model Stage started <<<<<]
+[2026-03-14 02:45:28,565: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:45:28,588: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:45:28,593: INFO: common: created directory at: artifacts]
+[2026-03-14 02:45:28,596: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-14 02:45:30,726: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 02:45:31,073: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 02:45:31,222: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 02:45:31,422: INFO: main: >>>>> stage Prepare Base Model Stage completed <<<<<
+
+x==========x]
+[2026-03-14 02:45:31,423: INFO: main: >>>>> stage Training started <<<<<]
+[2026-03-14 02:45:31,426: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:45:31,430: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:45:31,431: INFO: common: created directory at: artifacts]
+[2026-03-14 02:45:31,433: INFO: common: created directory at: artifacts\training]
+[2026-03-14 02:45:31,913: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 02:49:17,710: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 02:49:18,018: INFO: main: >>>>> stage Training completed <<<<<
+
+x==========x]
+[2026-03-14 02:49:18,019: INFO: main: >>>>> stage Model Evaluation Stage started <<<<<]
+[2026-03-14 02:49:18,041: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:49:18,049: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:49:18,055: INFO: common: created directory at: artifacts]
+[2026-03-14 02:49:18,668: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 02:49:44,653: INFO: common: json file saved at: scores.json]
+[2026-03-14 02:49:44,656: INFO: common: json file saved at: scores.json]
+[2026-03-14 02:49:48,250: ERROR: main: INVALID_PARAMETER_VALUE: Response: {'error_code': 'INVALID_PARAMETER_VALUE'}]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\main.py", line 48, in <module>
+    model_evaluation.main()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_04_model_evaluation.py", line 18, in main
+    evaluation.log_into_mlflow()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\model_evaluation_mlflow.py", line 61, in log_into_mlflow
+    with mlflow.start_run():
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\fluent.py", line 544, in start_run
+    active_run_obj = client.create_run(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\client.py", line 604, in create_run
+    return self._tracking_client.create_run(experiment_id, start_time, tags, run_name)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\telemetry\track.py", line 30, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 186, in create_run
+    return self.store.create_run(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\store\tracking\rest_store.py", line 370, in create_run
+    response_proto = self._call_endpoint(CreateRun, req_body)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\store\tracking\rest_store.py", line 233, in _call_endpoint
+    return call_endpoint(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\utils\rest_utils.py", line 627, in call_endpoint
+    response = verify_rest_response(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\utils\rest_utils.py", line 341, in verify_rest_response
+    raise RestException(json.loads(response.text))
+mlflow.exceptions.RestException: INVALID_PARAMETER_VALUE: Response: {'error_code': 'INVALID_PARAMETER_VALUE'}
+[2026-03-14 02:58:22,255: INFO: main: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 02:58:22,259: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:58:22,262: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:58:22,264: INFO: common: created directory at: artifacts]
+[2026-03-14 02:58:22,264: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 02:58:22,265: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 02:58:44,568: INFO: data_ingestion: file downloaded from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 02:58:45,601: INFO: data_ingestion: Extracted zip file into: artifacts/data_ingestion]
+[2026-03-14 02:58:45,601: INFO: main: >>>>> stage Data Ingestion Stage completed <<<<<
+
+x==========x]
+[2026-03-14 02:58:45,602: INFO: main: >>>>> stage Prepare Base Model Stage started <<<<<]
+[2026-03-14 02:58:45,604: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:58:45,606: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:58:45,607: INFO: common: created directory at: artifacts]
+[2026-03-14 02:58:45,608: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-14 02:58:46,390: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 02:58:46,600: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 02:58:46,635: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 02:58:46,797: INFO: main: >>>>> stage Prepare Base Model Stage completed <<<<<
+
+x==========x]
+[2026-03-14 02:58:46,798: INFO: main: >>>>> stage Training started <<<<<]
+[2026-03-14 02:58:46,801: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 02:58:46,803: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 02:58:46,804: INFO: common: created directory at: artifacts]
+[2026-03-14 02:58:46,805: INFO: common: created directory at: artifacts\training]
+[2026-03-14 02:58:47,073: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 03:02:44,732: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 03:02:45,063: INFO: main: >>>>> stage Training completed <<<<<
+
+x==========x]
+[2026-03-14 03:02:45,064: INFO: main: >>>>> stage Model Evaluation Stage started <<<<<]
+[2026-03-14 03:02:45,072: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 03:02:45,081: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 03:02:45,085: INFO: common: created directory at: artifacts]
+[2026-03-14 03:02:45,485: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 03:03:10,411: INFO: common: json file saved at: scores.json]
+[2026-03-14 03:03:10,413: INFO: common: json file saved at: scores.json]
+[2026-03-14 03:03:13,080: ERROR: main: INVALID_PARAMETER_VALUE: Response: {'error_code': 'INVALID_PARAMETER_VALUE'}]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\main.py", line 48, in <module>
+    model_evaluation.main()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_04_model_evaluation.py", line 18, in main
+    evaluation.log_into_mlflow()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\model_evaluation_mlflow.py", line 61, in log_into_mlflow
+    with mlflow.start_run():
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\fluent.py", line 544, in start_run
+    active_run_obj = client.create_run(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\client.py", line 604, in create_run
+    return self._tracking_client.create_run(experiment_id, start_time, tags, run_name)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\telemetry\track.py", line 30, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 186, in create_run
+    return self.store.create_run(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\store\tracking\rest_store.py", line 370, in create_run
+    response_proto = self._call_endpoint(CreateRun, req_body)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\store\tracking\rest_store.py", line 233, in _call_endpoint
+    return call_endpoint(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\utils\rest_utils.py", line 627, in call_endpoint
+    response = verify_rest_response(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\mlflow\utils\rest_utils.py", line 341, in verify_rest_response
+    raise RestException(json.loads(response.text))
+mlflow.exceptions.RestException: INVALID_PARAMETER_VALUE: Response: {'error_code': 'INVALID_PARAMETER_VALUE'}
+[2026-03-14 03:17:24,090: INFO: main: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 03:17:24,093: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 03:17:24,096: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 03:17:24,097: INFO: common: created directory at: artifacts]
+[2026-03-14 03:17:24,098: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 03:17:24,098: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 03:17:43,928: INFO: data_ingestion: file downloaded from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 03:17:44,690: INFO: data_ingestion: Extracted zip file into: artifacts/data_ingestion]
+[2026-03-14 03:17:44,690: INFO: main: >>>>> stage Data Ingestion Stage completed <<<<<
+
+x==========x]
+[2026-03-14 03:17:44,690: INFO: main: >>>>> stage Prepare Base Model Stage started <<<<<]
+[2026-03-14 03:17:44,693: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 03:17:44,694: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 03:17:44,695: INFO: common: created directory at: artifacts]
+[2026-03-14 03:17:44,696: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-14 03:17:45,474: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 03:17:45,705: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 03:17:45,749: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 03:17:45,921: INFO: main: >>>>> stage Prepare Base Model Stage completed <<<<<
+
+x==========x]
+[2026-03-14 03:17:45,922: INFO: main: >>>>> stage Training started <<<<<]
+[2026-03-14 03:17:45,925: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 03:17:45,928: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 03:17:45,929: INFO: common: created directory at: artifacts]
+[2026-03-14 03:17:45,930: INFO: common: created directory at: artifacts\training]
+[2026-03-14 03:17:46,253: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 03:21:38,203: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 03:21:38,676: INFO: main: >>>>> stage Training completed <<<<<
+
+x==========x]
+[2026-03-14 03:21:38,677: INFO: main: >>>>> stage Model Evaluation Stage started <<<<<]
+[2026-03-14 03:21:38,708: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 03:21:38,718: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 03:21:38,726: INFO: common: created directory at: artifacts]
+[2026-03-14 03:21:39,267: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 03:22:04,592: INFO: common: json file saved at: scores.json]
+[2026-03-14 03:22:04,593: INFO: common: json file saved at: scores.json]
+[2026-03-14 03:23:37,389: INFO: main: >>>>> stage Model Evaluation Stage completed <<<<<
+
+x==========x]
+[2026-03-14 03:27:46,441: INFO: main: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 03:27:46,451: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 03:27:46,461: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 03:27:46,465: INFO: common: created directory at: artifacts]
+[2026-03-14 03:27:46,466: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 03:27:46,469: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 03:28:08,744: INFO: data_ingestion: file downloaded from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 03:28:10,884: INFO: data_ingestion: Extracted zip file into: artifacts/data_ingestion]
+[2026-03-14 03:28:10,887: INFO: main: >>>>> stage Data Ingestion Stage completed <<<<<
+
+x==========x]
+[2026-03-14 03:28:10,887: INFO: main: >>>>> stage Prepare Base Model Stage started <<<<<]
+[2026-03-14 03:28:10,895: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 03:28:10,899: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 03:28:10,901: INFO: common: created directory at: artifacts]
+[2026-03-14 03:28:10,901: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-14 03:28:12,244: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 03:28:12,953: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 03:28:13,067: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 03:28:13,635: INFO: main: >>>>> stage Prepare Base Model Stage completed <<<<<
+
+x==========x]
+[2026-03-14 03:28:13,637: INFO: main: >>>>> stage Training started <<<<<]
+[2026-03-14 03:28:13,647: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 03:28:13,659: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 03:28:13,663: INFO: common: created directory at: artifacts]
+[2026-03-14 03:28:13,667: INFO: common: created directory at: artifacts\training]
+[2026-03-14 03:28:14,259: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 03:39:20,527: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 03:39:21,241: INFO: main: >>>>> stage Training completed <<<<<
+
+x==========x]
+[2026-03-14 03:39:21,244: INFO: main: >>>>> stage Model Evaluation Stage started <<<<<]
+[2026-03-14 03:39:21,280: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 03:39:21,306: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 03:39:21,322: INFO: common: created directory at: artifacts]
+[2026-03-14 03:39:22,484: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 03:40:21,392: INFO: common: json file saved at: scores.json]
+[2026-03-14 03:40:21,397: INFO: common: json file saved at: scores.json]
+[2026-03-14 03:43:35,289: INFO: main: >>>>> stage Model Evaluation Stage completed <<<<<
+
+x==========x]
