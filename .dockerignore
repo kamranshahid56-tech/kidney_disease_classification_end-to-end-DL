@@ -1,0 +1,12 @@
+.git
+logs/
+artifacts/
+mlruns/
+__pycache__/
+*.pyc
+.vscode/
+README.md
+research/
+src/cnnClassifier.egg-info/
+*.log
+.DS_Store
