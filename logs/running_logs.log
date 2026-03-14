@@ -500,3 +500,538 @@ x==========x]
 [2026-03-14 03:43:35,289: INFO: main: >>>>> stage Model Evaluation Stage completed <<<<<
 
 x==========x]
+[2026-03-14 17:15:14,285: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 17:15:14,290: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 17:15:14,296: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 17:15:14,299: INFO: common: created directory at: artifacts]
+[2026-03-14 17:15:14,301: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 17:15:14,305: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 17:15:25,498: ERROR: stage_01_data_ingestion: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 27, in download_file
+    raise e
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 22, in download_file
+    gdown.download(prefix + file_id, str(zip_download_dir))
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\gdown\download.py", line 202, in download
+    res = sess.get(url, stream=True, verify=verify)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-03-14 17:15:57,527: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 17:15:57,530: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 17:15:57,532: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 17:15:57,533: INFO: common: created directory at: artifacts]
+[2026-03-14 17:15:57,534: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 17:15:57,534: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 17:16:08,713: ERROR: stage_01_data_ingestion: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 27, in download_file
+    raise e
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 22, in download_file
+    gdown.download(prefix + file_id, str(zip_download_dir))
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\gdown\download.py", line 202, in download
+    res = sess.get(url, stream=True, verify=verify)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-03-14 17:17:36,289: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 17:17:36,293: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 17:17:36,296: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 17:17:36,297: INFO: common: created directory at: artifacts]
+[2026-03-14 17:17:36,298: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 17:17:36,298: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 17:17:47,469: ERROR: stage_01_data_ingestion: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 27, in download_file
+    raise e
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 22, in download_file
+    gdown.download(prefix + file_id, str(zip_download_dir))
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\gdown\download.py", line 202, in download
+    res = sess.get(url, stream=True, verify=verify)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-03-14 17:19:49,606: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 17:19:49,610: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 17:19:49,613: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 17:19:49,614: INFO: common: created directory at: artifacts]
+[2026-03-14 17:19:49,616: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 17:19:49,617: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 17:20:00,803: ERROR: stage_01_data_ingestion: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 27, in download_file
+    raise e
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 22, in download_file
+    gdown.download(prefix + file_id, str(zip_download_dir))
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\gdown\download.py", line 202, in download
+    res = sess.get(url, stream=True, verify=verify)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-03-14 17:21:21,511: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 17:21:21,516: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 17:21:21,519: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 17:21:21,520: INFO: common: created directory at: artifacts]
+[2026-03-14 17:21:21,521: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 17:21:21,521: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 17:22:00,820: ERROR: stage_01_data_ingestion: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\http\client.py", line 1395, in getresponse
+    response.begin()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\http\client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\http\client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\http\client.py", line 1395, in getresponse
+    response.begin()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\http\client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\http\client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 27, in download_file
+    raise e
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 22, in download_file
+    gdown.download(prefix + file_id, str(zip_download_dir))
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\gdown\download.py", line 202, in download
+    res = sess.get(url, stream=True, verify=verify)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 659, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-03-14 19:45:13,076: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 19:45:13,085: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 19:45:13,093: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 19:45:13,095: INFO: common: created directory at: artifacts]
+[2026-03-14 19:45:13,097: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 19:45:13,099: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 19:45:29,010: INFO: data_ingestion: file downloaded from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 19:45:30,331: INFO: data_ingestion: Extracted zip file into: artifacts/data_ingestion]
+[2026-03-14 19:45:30,332: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage completed <<<<<
+
+x==========x]
+[2026-03-14 19:48:52,169: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 19:48:52,173: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 19:48:52,177: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 19:48:52,179: INFO: common: created directory at: artifacts]
+[2026-03-14 19:48:52,180: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 19:48:52,181: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 19:49:03,394: ERROR: stage_01_data_ingestion: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 27, in download_file
+    raise e
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\components\data_ingestion.py", line 22, in download_file
+    gdown.download(prefix + file_id, str(zip_download_dir))
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\gdown\download.py", line 202, in download
+    res = sess.get(url, stream=True, verify=verify)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='drive.google.com', port=443): Max retries exceeded with url: /uc?export=download&id=1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3 (Caused by NameResolutionError("HTTPSConnection(host='drive.google.com', port=443): Failed to resolve 'drive.google.com' ([Errno 11001] getaddrinfo failed)"))
+[2026-03-14 19:49:19,510: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage started <<<<<]
+[2026-03-14 19:49:19,513: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 19:49:19,516: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 19:49:19,516: INFO: common: created directory at: artifacts]
+[2026-03-14 19:49:19,517: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-14 19:49:19,518: INFO: data_ingestion: downloading file from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 19:49:45,686: INFO: data_ingestion: file downloaded from :[https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing] into :[artifacts/data_ingestion/data.zip]]
+[2026-03-14 19:49:46,691: INFO: data_ingestion: Extracted zip file into: artifacts/data_ingestion]
+[2026-03-14 19:49:46,691: INFO: stage_01_data_ingestion: >>>>> stage Data Ingestion Stage completed <<<<<
+
+x==========x]
+[2026-03-14 19:50:14,274: INFO: stage_02_prepare_base_model: >>>>> stage Prepare Base Model Stage started <<<<<]
+[2026-03-14 19:50:14,279: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 19:50:14,283: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 19:50:14,285: INFO: common: created directory at: artifacts]
+[2026-03-14 19:50:14,286: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-14 19:50:15,185: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 19:50:15,453: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 19:50:15,507: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 19:50:15,695: INFO: stage_02_prepare_base_model: >>>>> stage Prepare Base Model Stage completed <<<<<
+
+x==========x]
+[2026-03-14 19:50:28,942: INFO: stage_03_model_training: >>>>> stage Model Training Stage started <<<<<]
+[2026-03-14 19:50:28,947: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 19:50:28,951: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 19:50:28,953: INFO: common: created directory at: artifacts]
+[2026-03-14 19:50:28,954: INFO: common: created directory at: artifacts\training]
+[2026-03-14 19:50:29,402: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 19:50:29,407: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 19:53:49,118: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-03-14 19:53:49,326: INFO: stage_03_model_training: >>>>> stage Model Training Stage completed <<<<<
+
+x==========x]
+[2026-03-14 19:54:07,398: INFO: stage_04_model_evaluation: >>>>> stage Model Evaluation Stage started <<<<<]
+[2026-03-14 19:54:07,402: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-14 19:54:07,406: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-14 19:54:07,406: INFO: common: created directory at: artifacts]
+[2026-03-14 19:54:07,879: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 19:54:07,885: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 19:54:23,747: INFO: common: json file saved at: scores.json]
+[2026-03-14 19:54:23,748: INFO: common: json file saved at: scores.json]
+[2026-03-14 19:54:23,748: INFO: stage_04_model_evaluation: >>>>> stage Model Evaluation Stage completed <<<<<
+
+x==========x]
+[2026-03-14 21:03:52,374: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.104:8080]
+[2026-03-14 21:03:52,375: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-14 21:03:59,794: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:03:59] "GET / HTTP/1.1" 200 -]
+[2026-03-14 21:04:36,879: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:04:36] "[33mPOST /predict HTTP/1.1[0m" 404 -]
+[2026-03-14 21:06:37,866: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:06:37] "GET / HTTP/1.1" 200 -]
+[2026-03-14 21:06:47,686: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:06:47] "[33mPOST /predict HTTP/1.1[0m" 404 -]
+[2026-03-14 21:11:49,010: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.104:8080]
+[2026-03-14 21:11:49,011: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-14 21:12:03,538: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:12:03] "GET / HTTP/1.1" 200 -]
+[2026-03-14 21:12:12,579: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\app.py", line 34, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\Users\Lenovo\Desktop\End-to-End-Project\kidney_disease_classification_end-to-end-DL\src\cnnClassifier\pipeline\prediction.py", line 13, in predict
+    model = load_model(os.path.join('artifacts','model.h5'))
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\keras\src\saving\saving_api.py", line 196, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 118, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\h5py\_hl\files.py", line 564, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "C:\Users\Lenovo\anaconda3\envs\kidney\lib\site-packages\h5py\_hl\files.py", line 238, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 56, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 57, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'artifacts\model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-03-14 21:12:12,604: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:12:12] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-14 21:14:21,173: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.104:8080]
+[2026-03-14 21:14:21,174: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-14 21:14:26,287: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:14:26] "GET / HTTP/1.1" 200 -]
+[2026-03-14 21:14:42,920: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 21:14:42,928: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 21:14:44,478: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:14:44] "POST /predict HTTP/1.1" 200 -]
+[2026-03-14 21:14:50,484: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 21:14:51,982: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:14:51] "POST /predict HTTP/1.1" 200 -]
+[2026-03-14 21:15:05,022: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 21:15:06,257: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:15:06] "POST /predict HTTP/1.1" 200 -]
+[2026-03-14 21:15:38,060: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 21:15:39,388: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:15:39] "POST /predict HTTP/1.1" 200 -]
+[2026-03-14 21:16:03,609: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.104:8080]
+[2026-03-14 21:16:03,612: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-14 21:16:04,598: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:16:04] "GET / HTTP/1.1" 200 -]
+[2026-03-14 21:16:11,735: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 21:16:11,741: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 21:16:13,329: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:16:13] "POST /predict HTTP/1.1" 200 -]
+[2026-03-14 21:16:51,326: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:16:51] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-03-14 21:17:46,683: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:17:46] "GET / HTTP/1.1" 200 -]
+[2026-03-14 21:18:29,875: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.104:8080]
+[2026-03-14 21:18:29,877: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-14 21:18:31,220: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:18:31] "GET / HTTP/1.1" 200 -]
+[2026-03-14 21:18:51,553: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-03-14 21:18:51,560: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-14 21:18:53,155: INFO: _internal: 127.0.0.1 - - [14/Mar/2026 21:18:53] "POST /predict HTTP/1.1" 200 -]
